@@ -5,7 +5,7 @@ if 'OPTIONS' == 'OPTIONS':
     update_json =   False   #Default: False | If true, printer.json will be deleted and replaced
 
 if 'CONSTANTS' == 'CONSTANTS':   
-    if datetime.now().strftime('%A') == 'Monday' or os.path.exists('printer.json'):
+    if datetime.now().strftime('%A') == 'Monday' or os.path.exists('printer.json') == False:
         update_json = True
 
 if "FUNC" == "FUNC":
