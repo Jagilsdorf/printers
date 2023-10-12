@@ -35,13 +35,14 @@ if "FUNC" == "FUNC":
         return None
 
     def update_printer_DNS():
-        all_printers={'DEP':[], 'KAN':[], 'ONT':[]}
+        all_printers = {'DEP': {}, 'KAN': {}, 'ONT': {}}
 
-        for x in range(1, 256):  # Changed range start to 1 and end to 256 to include DEP1P001 to DEP1P255
+        for x in range(1, 256):  # Include ABC1P001 to ABC1P255
             formatted_name = f"{x:03}"  # Formats the number to 3 digits with leading zeros
-            all_printers['DEP'].append(f'DEP1P{formatted_name}')
-            all_printers['KAN'].append(f'KAN1P{formatted_name}')
-            all_printers['ONT'].append(f'ONT1P{formatted_name}')
+            all_printers['DEP'][f'DEP1P{formatted_name}'] = None
+            all_printers['KAN'][f'KAN1P{formatted_name}'] = None
+            all_printers['ONT'][f'ONT1P{formatted_name}'] = None
+
 
         for location in list(all_printers.keys()):
             for printer_name in all_printers[location]:
